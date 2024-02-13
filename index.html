@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Countdown to new year</title>
+    <link href='https://cdn.iconscout.com/icon/premium/png-256-thumb/2024-countdown-9831648-7967123.png?f=webp' rel='icon' type='image/x-icon'/>
+    <link href='https://cdn.iconscout.com/icon/premium/png-256-thumb/2024-countdown-9831648-7967123.png?f=webp' rel='shortcut icon'/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<video src="./fireworks.mp4" muted autoplay loop></video>
+<audio src="./Tieng-phao-hoa-no-tren-bau-troi-www_tiengdong_com.mp3" autoplay loop ></audio>
+<div class="container">
+    <h2>
+        <span>Countdown to New Year</span><span id="year">2025</span>
+    </h2>
+    <div class="countdown">
+        <div id="day">NA</div>
+        <div id="hour">NA</div>
+        <div id="minute">NA</div>
+        <div id="second">NA</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    setInterval(function () {
+        let today = new Date();
+        // Set the target date to January 29, 2025 00:00:00
+        let targetDate = new Date('January 29, 2025 00:00:00').getTime();
+        let now = today.getTime();
+
+        // Calculate the gap
+        let gap = targetDate - now;
+
+        let second = 1000;
+        let minute = second * 60;
+        let hour = minute * 60;
+        let day = hour * 24;
+
+        let d = Math.floor(gap / day);
+        let h = Math.floor((gap % day) / hour);
+        let m = Math.floor((gap % hour) / minute);
+        let s = Math.floor((gap % minute) / second);
+
+        document.getElementById("day").innerText = d;
+        document.getElementById("hour").innerText = h;
+        document.getElementById("minute").innerText = m;
+        document.getElementById("second").innerText = s;
+
+    }, 1000);
+</script>
+</body>
+</html>
